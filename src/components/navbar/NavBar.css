@@ -1,0 +1,40 @@
+.navbar-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 0;
+}
+
+.image img {
+    width: 230px;
+    display: block;
+    object-fit: cover;
+
+}
+
+.navlinks ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    gap: 30px;
+}
+
+.navlinks ul li {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.actions-btns {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
+.actions-btns button {
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+
+
