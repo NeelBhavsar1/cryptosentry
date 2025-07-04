@@ -9,6 +9,10 @@
 }
 
 body, html {
-  background: linear-gradient(90deg, #1f1f2e 0%, #32344a 50%, #1b1b27 100%);
-  color: #ddd;
+  background: url(../src/assets/homegradient.png);
+  background-size: cover;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
+

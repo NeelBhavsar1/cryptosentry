@@ -31,24 +31,31 @@
 }
 
 .navlinks a {
-    text-decoration: none;
-    color: #ddd;
-    background: linear-gradient(45deg, #ddd, #aaa);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    padding: 10px 20px;
-    transition: all 0.5s ease;
+  text-decoration: none;
+  color: #ddd;
+  background: transparent;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: #5f9fff;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+  border-radius: 12px;
+
+  transition: all 0.5s ease;
+}
+
+.navlinks a:hover {
+  background: none;
+  color: #5f9fff;
+  box-shadow: 0 0 6px #5f9fff, 0 0 12px #5f9fff;
+  
 }
 
 .navlinks a.active {
-    background: linear-gradient(135deg, #f0f0f0, #dcdcdc, #c0c0c0);
-    -webkit-background-clip: unset;
-    -webkit-text-fill-color: #333;
-    color: #333;
-    border: 2px solid #bbb;
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.15);
-    border-radius: 12px;
-    padding: 10px 20px;
+  background: none;
+  color: #5f9fff;
+  box-shadow: 0 0 6px #5f9fff, 0 0 12px #5f9fff;
+  border: 2px solid #5f9fff;
+  border-radius: 12px;
 }
 
 .actions-btns {
