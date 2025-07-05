@@ -3,8 +3,8 @@ import './Crypto.css'
 
 const Crypto = () => {
   return (
-    <div>
-        <h1>Crypto</h1>
+    <div className="crypto-container">
+      
     </div>
   )
 }
