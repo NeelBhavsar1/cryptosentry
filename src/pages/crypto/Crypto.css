@@ -7,7 +7,6 @@
   margin-top: 30px;           
 }
 
-
 .input-container {
   position: relative;
   width: 500px;
@@ -33,21 +32,121 @@
 }
 
 .main-content {
-    border-radius: 20px;
-    border: 2px solid #5f9fff;
-    box-shadow:
-        0 0 4px #5f9fff,
-        0 0 8px #5f9fff;
+  border-radius: 20px;
+  border: 2px solid #5f9fff;
+  box-shadow:
+      0 0 4px #5f9fff,
+      0 0 8px #5f9fff;
 
-    min-width: 1200px;
-    max-width: 1201px;
-    min-height: 550px;
-    max-height: 551px;
+  min-width: 1200px;
+  max-width: 1201px;
+  min-height: 550px;
+  max-height: 551px;
 
-    overflow-y: scroll;
-    padding: 30px;
-
+  overflow-y: scroll;
+  padding: 30px;
+  color: white;
 }
 
+.main-content ul {
+  list-style-type: none;
+}
 
+.coin-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
+.coin-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1e1e2f;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 0 10px rgba(95, 159, 255, 0.4);
+  transition: transform 0.2s ease;
+}
+
+.coin-card:hover {
+  transform: scale(1.02);
+}
+
+.coin-main {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.coin-img {
+  width: 40px;
+  height: 40px;
+}
+
+.coin-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+}
+
+.coin-symbol {
+  font-size: 14px;
+  color: #aaa;
+}
+
+.coin-data {
+  text-align: right;
+}
+
+.coin-price {
+  font-size: 18px;
+  color: #9fdfff;
+  font-weight: 600;
+}
+
+.coin-change {
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.coin-mcap {
+  font-size: 14px;
+  color: #ccc;
+  margin-top: 4px;
+}
+
+.search-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; 
+  width: 500px; 
+}
+
+.pagination {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  align-items: center;
+}
+
+.pagination button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  background-color: #5f9fff;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.pagination button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: #3f7fdf;
+}

@@ -3,6 +3,7 @@ import './NavBar.css'
 import logo_icon from '../../assets/logo1.png'
 import { NavLink } from 'react-router-dom'
 
+
 const NavBar = () => {
     const [selectedCurrency, setSelectedCurrency] = useState('Currency')
 
