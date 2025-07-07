@@ -6,6 +6,7 @@ import About from '../src/pages/about/About'
 import Crypto from '../src/pages/crypto/Crypto'
 import CryptoBot from '../src/pages/cryptobot/CryptoBot'
 import Resources from '../src/pages/resources/Resources'
+import CryptoDetail from './pages/crypto/CryptoDetail'
 
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
         <Route path='/crypto' element={<Crypto />}/>
         <Route path='/cryptobot' element={<CryptoBot />}/>
         <Route path='/resources' element={<Resources />}/>
+        <Route path='/crypto/:id' element={<CryptoDetail />} />
       </Routes>
     </div>
   )

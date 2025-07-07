@@ -2,12 +2,15 @@ import React, { useEffect, useState } from 'react'
 import './Crypto.css'
 import search_icon from '../../assets/search.png'
 import { fetchCoins } from './api'
+import { useNavigate } from 'react-router-dom'
 
 const Crypto = () => {
 
   const [coins, setCoins] = useState([])
   const [searchTerm, setSearchTerm] = useState('')
   const [page, setPage] = useState(1)
+
+  const navigate = useNavigate()
 
   useEffect(() => {
     const params = {
@@ -63,7 +66,7 @@ const Crypto = () => {
       {coins
         .filter((coin) => coin.name.toLowerCase().includes(searchTerm))
         .map((coin) => (
-          <div className="coin-card" key={coin.id}>
+          <div className="coin-card" key={coin.id} onClick={() => navigate(`/crypto/${coin.id}`)}>
             <div className="coin-main">
               <img src={coin.image} alt={coin.name} className="coin-img" />
               <div>
