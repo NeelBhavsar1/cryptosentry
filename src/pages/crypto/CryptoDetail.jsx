@@ -6,12 +6,15 @@ import {
 } from 'recharts'
 import './CryptoDetail.css'
 import LoadingSpinner from '../../components/other/LoadingSpinner'
+import { useCurrency } from '../../context/CurrencyContext'
+import { getCurrencySymbol } from '../../context/currencySymbols'
 
 const CryptoDetail = () => {
   const { id } = useParams()
   const [crypto, setCrypto] = useState(null)
   const [priceData, setPriceData] = useState([])
   const [loading, setLoading] = useState(true)
+  const {currency} = useCurrency()
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,7 +25,7 @@ const CryptoDetail = () => {
 
         const chartRes = await axios.get(
           `https://api.coingecko.com/api/v3/coins/${id}/market_chart`,
-          { params: { vs_currency: 'usd', days: 7 } }
+          { params: { vs_currency: currency, days: 7 } }
         )
 
         const formattedData = chartRes.data.prices.map(([timestamp, price]) => ({
@@ -39,7 +42,7 @@ const CryptoDetail = () => {
     }
 
     fetchData()
-  }, [id])
+  }, [id, currency])
 
   if (loading) {
     return <LoadingSpinner />
@@ -56,11 +59,11 @@ const CryptoDetail = () => {
         </div>
         <div className="market-data">
           <h2>Market Data</h2>
-          <p>Price: ${crypto.market_data.current_price.usd.toLocaleString()}</p>
+          <p>Price: {getCurrencySymbol(currency)} {crypto.market_data.current_price[currency]?.toLocaleString()}</p>
           <p>Market Cap Rank: #{crypto.market_cap_rank}</p>
-          <p>24h High: ${crypto.market_data.high_24h.usd.toLocaleString()}</p>
-          <p>24h Low: ${crypto.market_data.low_24h.usd.toLocaleString()}</p>
-          <p>Volume: ${crypto.market_data.total_volume.usd.toLocaleString()}</p>
+          <p>24h High: {getCurrencySymbol(currency)} {crypto.market_data.high_24h[currency]?.toLocaleString()}</p>
+          <p>24h Low: {getCurrencySymbol(currency)} {crypto.market_data.low_24h[currency]?.toLocaleString()}</p>
+          <p>Volume: {getCurrencySymbol(currency)} {crypto.market_data.total_volume[currency]?.toLocaleString()}</p>
           <p>Circulating Supply: {crypto.market_data.circulating_supply.toLocaleString()}</p>
         </div>
       </div>

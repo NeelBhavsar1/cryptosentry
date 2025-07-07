@@ -4,6 +4,8 @@ import search_icon from '../../assets/search.png'
 import { fetchCoins } from './api'
 import { useNavigate } from 'react-router-dom'
 import LoadingSpinner from '../../components/other/LoadingSpinner'
+import { useCurrency } from '../../context/CurrencyContext'
+import { getCurrencySymbol } from '../../context/currencySymbols'
 
 const Crypto = () => {
 
@@ -11,12 +13,13 @@ const Crypto = () => {
   const [searchTerm, setSearchTerm] = useState('')
   const [page, setPage] = useState(1)
   const [loading, setLoading] = useState(true)
+  const {currency} = useCurrency()
 
   const navigate = useNavigate()
 
   useEffect(() => {
     const params = {
-      vs_currency: 'usd',
+      vs_currency: currency,
       order: 'market_cap_desc',
       per_page: 250, 
       page: page,
@@ -40,7 +43,7 @@ const Crypto = () => {
     const interval = setInterval(getCoins, 60000)
 
     return () => clearInterval(interval)
-  }, [page])
+  }, [page, currency])
 
   if (loading) {
     return <LoadingSpinner />
@@ -84,7 +87,7 @@ const Crypto = () => {
               </div>
             </div>
             <div className="coin-data">
-              <div className="coin-price">${coin.current_price.toLocaleString()}</div>
+              <div className="coin-price">{getCurrencySymbol(currency)}{coin.current_price.toLocaleString()}</div>
               <div
                 className="coin-change"
                 style={{

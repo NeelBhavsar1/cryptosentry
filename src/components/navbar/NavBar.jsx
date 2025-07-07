@@ -2,13 +2,14 @@ import React, { useState } from 'react'
 import './NavBar.css'
 import logo_icon from '../../assets/logo1.png'
 import { NavLink } from 'react-router-dom'
+import { useCurrency } from '../../context/CurrencyContext'
 
 
 const NavBar = () => {
-    const [selectedCurrency, setSelectedCurrency] = useState('Currency')
+    const {currency, setCurrency} = useCurrency()
 
-    const handleCurrencySelect = (currency) => {
-        setSelectedCurrency(currency)
+    const handleCurrencySelect = (selected) => {
+        setCurrency(selected.toLowerCase())
         //sort the currency later
     }
 
@@ -29,7 +30,7 @@ const NavBar = () => {
             </div>
             <div className="actions-btns">
                 <div className="dropdown">
-                    <button className="dropbtn">{selectedCurrency} ▼</button>
+                    <button className="dropbtn">{currency.toUpperCase()} ▼</button>
                     <div className="dropdown-content">
                         <ul>
                             <li onClick={() => handleCurrencySelect('USD')}>USD</li>
