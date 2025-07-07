@@ -3,12 +3,14 @@ import './Crypto.css'
 import search_icon from '../../assets/search.png'
 import { fetchCoins } from './api'
 import { useNavigate } from 'react-router-dom'
+import LoadingSpinner from '../../components/other/LoadingSpinner'
 
 const Crypto = () => {
 
   const [coins, setCoins] = useState([])
   const [searchTerm, setSearchTerm] = useState('')
   const [page, setPage] = useState(1)
+  const [loading, setLoading] = useState(true)
 
   const navigate = useNavigate()
 
@@ -22,12 +24,15 @@ const Crypto = () => {
     }
 
     const getCoins = async () => {
+      setLoading(true)
       try {
         const data = await fetchCoins(params)
         setCoins(data)
       } catch (err) {
         console.log(err)
-      } 
+      } finally {
+        setLoading(false)
+      }
     }
 
     getCoins()
@@ -36,6 +41,10 @@ const Crypto = () => {
 
     return () => clearInterval(interval)
   }, [page])
+
+  if (loading) {
+    return <LoadingSpinner />
+  }
 
   return (
     <div className="crypto-container">

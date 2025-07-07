@@ -25,6 +25,12 @@
                     0 0 4px #5f9fff,
                     0 0 8px #5f9fff;
                 border-radius: 22px;
+                scrollbar-width: none;
+
+                ::-webkit-scrollbar {
+                    display: none;
+                }
+
             }
         }
 

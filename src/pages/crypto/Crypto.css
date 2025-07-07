@@ -46,7 +46,15 @@
   overflow-y: scroll;
   padding: 30px;
   color: white;
+
+  scrollbar-width: none;
+  
 }
+
+.main-content::-webkit-scrollbar {
+  display: none;
+}
+
 
 .main-content ul {
   list-style-type: none;

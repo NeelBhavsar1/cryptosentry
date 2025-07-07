@@ -5,14 +5,17 @@ import {
   LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid
 } from 'recharts'
 import './CryptoDetail.css'
+import LoadingSpinner from '../../components/other/LoadingSpinner'
 
 const CryptoDetail = () => {
   const { id } = useParams()
   const [crypto, setCrypto] = useState(null)
   const [priceData, setPriceData] = useState([])
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true)
       try {
         const coinRes = await axios.get(`https://api.coingecko.com/api/v3/coins/${id}`)
         setCrypto(coinRes.data)
@@ -30,13 +33,17 @@ const CryptoDetail = () => {
         setPriceData(formattedData)
       } catch (error) {
         console.error(error)
+      } finally {
+        setLoading(false)
       }
     }
 
     fetchData()
   }, [id])
 
-  if (!crypto) return <div>Loading...</div>
+  if (loading) {
+    return <LoadingSpinner />
+  }
 
   return (
     <div className="crypto-detail-container">
