@@ -1,8 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './CryptoBot.css'
 import ai_image from '../../assets/ai.png'
 
 const CryptoBot = () => {
+
+  const [input, setInput] = useState('')
+  const [message, setMessage] = useState([])
+  const [loading, setLoading] = useState(false)
+
+
   return (
     <div className="chatwithai">
       <div className="header-info">
@@ -48,8 +54,6 @@ const CryptoBot = () => {
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto itaque quae, et ipsum adipisci, ipsam nisi labore impedit ex dolor illo! Eveniet illo magni, ipsa reprehenderit libero officiis voluptates ipsum.</p>
           </div>
         </div>
-
-        <div className="seperator"></div>
         
         <div className="bottom">
           <input type="text" placeholder='Enter Something...' />

@@ -36,6 +36,7 @@ const About = () => {
         </div>  
       </motion.div>
 
+      {/*
       <motion.div className="container-item" variants={aboutitemvar}>
         <div className="header-info">
           <h1>AI Chatbot Assistance</h1>
@@ -46,6 +47,7 @@ const About = () => {
             built-in AI assistant — available 24/7 to guide you.</p>
         </div>  
       </motion.div>
+      */}
 
       <motion.div className="container-item" variants={aboutitemvar}>
         <div className="header-info">

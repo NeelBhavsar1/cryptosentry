@@ -32,7 +32,9 @@ const NavBar = () => {
                     <NavLink to='/'><li>Home</li></NavLink>
                     <NavLink to='/about'><li>About</li></NavLink>
                     <NavLink to='/crypto'><li>Crypto</li></NavLink>
+                    {/*
                     <NavLink to='/cryptobot'><li>Talk to Ai</li></NavLink>
+                    */}
                     <NavLink to='/resources'><li>Resources</li></NavLink>
                 </ul>
             </div>

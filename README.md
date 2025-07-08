@@ -1,12 +1,32 @@
-# React + Vite
+# CryptoSentry
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+CryptoSentry is a modern React-based cryptocurrency dashboard app designed to provide users with real-time crypto data, insightful resources, and a smooth user experience enhanced by animations and context state management.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Live Crypto Data:** Powered by the [CoinGecko API](https://www.coingecko.com/en/api) to fetch up-to-date cryptocurrency prices and market information.
+- **Multi-Page Structure:**
+  - **Home:** Overview and introduction.
+  - **About:** Information about the app and its purpose.
+  - **Crypto:** Dynamic listing and details of cryptocurrencies.
+  - **Resources:** Helpful guides and links.
+- **Smooth Animations:** Leveraged [Framer Motion](https://www.framer.com/motion/) for fluid and engaging page transitions and UI animations.
+- **State Management:** Used React Context API to handle global app state cleanly and efficiently.
+- **Responsive UI:** Designed to work well on multiple screen sizes.
+- **Clean, Modular Codebase:** Organized components and pages for maintainability.
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Frontend:** React, React Router, React Context API
+- **Animations:** Framer Motion
+- **API:** CoinGecko REST API
+- **Styling:** CSS 
+- **Tooling:** Vite 
+
+## Getting Started
+
+### Prerequisites
+
+- npm or yarn
+
+
