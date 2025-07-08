@@ -1,10 +1,18 @@
 import React from 'react'
 import './About.css'
+import { motion } from 'framer-motion'
+import { aboutcontainervar, aboutitemvar } from '../../components/other/animations'
 
 const About = () => {
   return (
-    <div className="about-container">
-      <div className="container-item">
+    <motion.div 
+    className="about-container"
+    variants={aboutcontainervar}
+    initial='hidden'
+    animate='visible'
+    >
+
+      <motion.div className="container-item" variants={aboutitemvar}>
         <div className="header-info">
           <h1>What is CryptoSentry?</h1>
         </div>
@@ -14,8 +22,9 @@ const About = () => {
              and tools to help you track, understand, and explore 
              the cryptocurrency market safely and confidently.</p>
         </div>  
-      </div>
-      <div className="container-item">
+      </motion.div>
+
+      <motion.div className="container-item" variants={aboutitemvar}>
         <div className="header-info">
           <h1>Real-Time Market Data</h1>
         </div>
@@ -25,8 +34,9 @@ const About = () => {
             — so you can make informed decisions in an ever-changing 
             crypto landscape.</p>
         </div>  
-      </div>
-      <div className="container-item">
+      </motion.div>
+
+      <motion.div className="container-item" variants={aboutitemvar}>
         <div className="header-info">
           <h1>AI Chatbot Assistance</h1>
         </div>
@@ -35,8 +45,9 @@ const About = () => {
             in Bitcoin?” and get intelligent, natural responses from our 
             built-in AI assistant — available 24/7 to guide you.</p>
         </div>  
-      </div>
-      <div className="container-item">
+      </motion.div>
+
+      <motion.div className="container-item" variants={aboutitemvar}>
         <div className="header-info">
           <h1>Educational Resources</h1>
         </div>
@@ -45,8 +56,9 @@ const About = () => {
             provides easy-to-understand definitions, breakdowns, and insights 
             into coins, terms, and trends.</p>
         </div>  
-      </div>
-      <div className="container-item">
+      </motion.div>
+
+      <motion.div className="container-item" variants={aboutitemvar}>
         <div className="header-info">
           <h1>Simple, Clean UI</h1>
         </div>
@@ -54,8 +66,9 @@ const About = () => {
           <p>Designed with a minimal and responsive layout, our interface lets 
             you focus on what matters — without distractions or unnecessary clutter.</p>
         </div>  
-      </div>
-      <div className="container-item">
+      </motion.div>
+
+      <motion.div className="container-item" variants={aboutitemvar}>
         <div className="header-info">
           <h1>Safe & Free</h1>
         </div>
@@ -63,8 +76,8 @@ const About = () => {
           <p>Crypto Sentry is completely free to use and doesn’t require any login 
             or wallet connections. Just visit, learn, explore, and stay updated.</p>
         </div>  
-      </div> 
-    </div>
+      </motion.div> 
+    </motion.div>
   )
 }
 

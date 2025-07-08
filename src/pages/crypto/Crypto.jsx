@@ -6,6 +6,8 @@ import { useNavigate } from 'react-router-dom'
 import LoadingSpinner from '../../components/other/LoadingSpinner'
 import { useCurrency } from '../../context/CurrencyContext'
 import { getCurrencySymbol } from '../../context/currencySymbols'
+import { motion } from 'framer-motion'
+import { coinlistvar, carditemvar } from '../../components/other/animations'
 
 const Crypto = () => {
 
@@ -73,12 +75,29 @@ const Crypto = () => {
     </div>
   </div>
 
-  <div className="main-content">
-    <div className="coin-list">
+  <motion.div className="main-content"
+  initial={{opacity: 0}}
+  animate={{opacity: 1}}
+  transition={{duration: 0.5, ease: 'easeInOut'}}
+  >
+    <motion.div 
+    className="coin-list"
+    variants={coinlistvar}
+    initial='hidden'
+    animate='visible'
+    >
       {coins
         .filter((coin) => coin.name.toLowerCase().includes(searchTerm))
         .map((coin) => (
-          <div className="coin-card" key={coin.id} onClick={() => navigate(`/crypto/${coin.id}`)}>
+          <motion.div 
+          className="coin-card" 
+          key={coin.id} 
+          onClick={() => navigate(`/crypto/${coin.id}`)}
+          variants={carditemvar}
+          whileHover={{scale: 1.02}}
+          whileTap={{scale:0.998}}
+          
+          >
             <div className="coin-main">
               <img src={coin.image} alt={coin.name} className="coin-img" />
               <div>
@@ -99,10 +118,10 @@ const Crypto = () => {
               </div>
               <div className="coin-mcap">Market Cap: ${coin.market_cap.toLocaleString()}</div>
             </div>
-          </div>
+          </motion.div>
         ))}
-    </div>
-  </div>
+    </motion.div>
+  </motion.div>
 </div>
 
   )

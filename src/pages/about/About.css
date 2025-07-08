@@ -22,11 +22,12 @@
     max-width: 3000px;
     text-align: left;
     transition: transform 0.2s ease-in-out;
+    cursor: pointer;
 
 }
 
 .container-item:hover {
-  transform: scale(1.03);
+  transform: scale(1.1);
   box-shadow:
     0 0 6px #5f9fff,
     0 0 12px #5f9fff;

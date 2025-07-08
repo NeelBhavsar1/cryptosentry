@@ -3,6 +3,8 @@ import './NavBar.css'
 import logo_icon from '../../assets/logo1.png'
 import { NavLink } from 'react-router-dom'
 import { useCurrency } from '../../context/CurrencyContext'
+import { navbarAnimation } from '../other/animations'
+import { motion } from 'framer-motion'
 
 
 const NavBar = () => {
@@ -10,11 +12,17 @@ const NavBar = () => {
 
     const handleCurrencySelect = (selected) => {
         setCurrency(selected.toLowerCase())
-        //sort the currency later
     }
 
     return (
-        <div className="navbar-container">
+        <motion.div 
+        className="navbar-container"
+        variants={navbarAnimation}
+        initial='hidden'
+        animate='visible'
+        transition={{duration: 1, ease: 'easeInOut'}}
+        
+        >
             <div className="image">
                 <img src={logo_icon} alt="logo of app" />
                 {/* SORT THE LOGO OUT LATER */}
@@ -39,9 +47,8 @@ const NavBar = () => {
                         </ul>
                     </div>
                 </div>
-                <button>Sign in</button>
             </div>
-        </div>
+        </motion.div>
     )
 }
 

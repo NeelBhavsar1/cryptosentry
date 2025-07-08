@@ -70,6 +70,12 @@
     margin-left: 100px;
 }
 
+.typewriter {
+  white-space: pre-wrap;
+  line-height: 1.6;
+  text-align: start;
+}
+
 
 
 
