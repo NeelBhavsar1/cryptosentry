@@ -1,4 +1,4 @@
-/* Reset some basics */
+
 
 
 .home-container {
@@ -19,7 +19,7 @@
   gap: 2rem;
 }
 
-/* Left side text container */
+
 .left-container {
   flex: 1 1 0;
   display: flex;
@@ -28,7 +28,7 @@
   max-width: 600px;
 }
 
-/* Title */
+
 .left-container h1 {
   font-size: 3rem;
   font-weight: 700;
@@ -37,7 +37,7 @@
   color: #a3c9ff;
 }
 
-/* Paragraph with typewriter effect */
+
 .typewriter {
   font-size: 1rem;
   line-height: 1.6;
@@ -47,14 +47,14 @@
   user-select: text;
 }
 
-/* Buttons container */
+
 .buttons {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
 }
 
-/* Buttons styling */
+
 .buttons button {
   font-size: 1.1rem;
   font-weight: 600;
@@ -80,7 +80,7 @@
   outline: none;
 }
 
-/* Right side image container */
+
 .right-container {
   flex: 1 1 0;
   display: flex;
@@ -94,41 +94,24 @@
   height: auto;
   border-radius: 20px;
   user-select: none;
+  background: transparent!;
 }
 
-/* Responsive for tablets and smaller */
-@media (max-width: 900px) {
+
+
+@media (max-width: 768px) {
   .home-container {
     flex-direction: column;
+    align-items: center;
     height: auto;
-    padding: 30px 20px;
-  }
-
-  .left-container,
-  .right-container {
-    max-width: 100%;
-    margin: 0 auto;
-  }
-
-  .right-container {
-    margin-top: 30px;
-  }
-
-  .left-container h1 {
-    font-size: 2.5rem;
-  }
-
-  .buttons button {
-    min-width: 120px;
-    padding: 10px 20px;
-    font-size: 1rem;
-  }
-}
-
-/* Responsive for mobile */
-@media (max-width: 480px) {
-  .home-container {
     padding: 20px 15px;
+    gap: 2rem;
+  }
+
+  .left-container {
+    max-width: 100%;
+    text-align: center;
+    align-items: center;
   }
 
   .left-container h1 {
@@ -136,15 +119,30 @@
   }
 
   .typewriter {
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
 
   .buttons {
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
   }
 
   .buttons button {
-    min-width: 100%;
+    width: 100%;
     padding: 12px;
+  }
+
+  .right-container {
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .right-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    background: transparent!;
   }
 }

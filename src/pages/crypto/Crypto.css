@@ -1,60 +1,57 @@
 .crypto-container {
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  justify-content: center;   
-  align-items: center;    
-  margin-top: 30px;           
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
 }
 
 .input-container {
   position: relative;
-  width: 500px;
+  width: 350px;
+  margin-bottom: 8px;
 }
 
 .input-container input {
   width: 100%;
-  padding: 15px 20px 15px 50px; 
-  border-radius: 30px;
+  padding: 10px 15px 10px 40px;
+  border-radius: 20px;
   border: 1px solid #ccc;
-  font-size: 16px;
+  font-size: 14px;
   outline: none;
 }
 
 .search-icon {
   position: absolute;
   top: 50%;
-  left: 20px;
+  left: 15px;
   transform: translateY(-50%);
-  width: 20px;
-  height: 20px;
-  pointer-events: none; 
+  width: 16px;
+  height: 16px;
+  pointer-events: none;
 }
 
 .main-content {
-  border-radius: 20px;
+  margin-top: 10px;
+  border-radius: 16px;
   border: 2px solid #5f9fff;
   box-shadow:
-      0 0 4px #5f9fff,
-      0 0 8px #5f9fff;
-
-  min-width: 1200px;
-  max-width: 1201px;
-  min-height: 550px;
-  max-height: 551px;
+    0 0 3px #5f9fff,
+    0 0 6px #5f9fff;
+  
+  width: 800px;
+  height: 330px;
 
   overflow-y: scroll;
-  padding: 30px;
+  padding: 20px;
   color: white;
 
   scrollbar-width: none;
-  
 }
 
 .main-content::-webkit-scrollbar {
   display: none;
 }
-
 
 .main-content ul {
   list-style-type: none;
@@ -63,7 +60,7 @@
 .coin-list {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 12px;
 }
 
 .coin-card {
@@ -71,9 +68,9 @@
   justify-content: space-between;
   align-items: center;
   background: #1e1e2f;
-  padding: 20px;
-  border-radius: 16px;
-  box-shadow: 0 0 10px rgba(95, 159, 255, 0.4);
+  padding: 14px;
+  border-radius: 12px;
+  box-shadow: 0 0 6px rgba(95, 159, 255, 0.4);
   transition: transform 0.2s ease;
   cursor: pointer;
 }
@@ -85,22 +82,22 @@
 .coin-main {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 12px;
 }
 
 .coin-img {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
 }
 
 .coin-name {
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 600;
   color: white;
 }
 
 .coin-symbol {
-  font-size: 14px;
+  font-size: 12px;
   color: #aaa;
 }
 
@@ -109,45 +106,46 @@
 }
 
 .coin-price {
-  font-size: 18px;
+  font-size: 14px;
   color: #9fdfff;
   font-weight: 600;
 }
 
 .coin-change {
-  font-size: 14px;
-  margin-top: 4px;
+  font-size: 12px;
+  margin-top: 2px;
 }
 
 .coin-mcap {
-  font-size: 14px;
+  font-size: 12px;
   color: #ccc;
-  margin-top: 4px;
+  margin-top: 2px;
 }
 
 .search-bar {
   display: flex;
   flex-direction: column;
-  gap: 10px; 
-  width: 500px; 
+  gap: 8px;
+  width: 350px;
 }
 
 .pagination {
   margin: 0 auto;
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 10px;
   align-items: center;
 }
 
 .pagination button {
-  padding: 8px 16px;
-  border-radius: 8px;
+  padding: 6px 12px;
+  border-radius: 6px;
   border: none;
   background-color: #5f9fff;
   color: white;
   cursor: pointer;
   font-weight: bold;
+  font-size: 14px;
   transition: background-color 0.3s;
 }
 
@@ -158,4 +156,70 @@
 
 .pagination button:hover:not(:disabled) {
   background-color: #3f7fdf;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .input-container,
+  .search-bar {
+    width: 90vw; /* full width with small side margin */
+    max-width: 350px; /* keeps max width */
+  }
+
+  .input-container input {
+    font-size: 12px;
+    padding: 8px 12px 8px 35px;
+    border-radius: 16px;
+  }
+
+  .search-icon {
+    left: 12px;
+    width: 14px;
+    height: 14px;
+  }
+
+  .main-content {
+    margin-top: 10px;
+    width: 95vw;
+    height: 570px;
+    padding: 15px;
+    border-radius: 12px;
+  }
+
+  .coin-card {
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .coin-img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .coin-name {
+    font-size: 12px;
+  }
+
+  .coin-symbol {
+    font-size: 10px;
+  }
+
+  .coin-price {
+    font-size: 12px;
+  }
+
+  .coin-change,
+  .coin-mcap {
+    font-size: 10px;
+  }
+
+  .pagination button {
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+
+  .pagination {
+    gap: 8px;
+  }
 }
