@@ -1,44 +1,83 @@
 .about-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    padding: 30px;
-    margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  gap: 14px;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  justify-content: center;
 }
 
 .container-item {
-    color: white;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    border-radius: 20px;
-    border: 2px solid #5f9fff;
-    box-shadow:
-        0 0 4px #5f9fff,
-        0 0 8px #5f9fff;
-    padding: 15px;
-    min-height: 300px;
-    max-height: 350px;
-    max-width: 3000px;
-    text-align: left;
-    transition: transform 0.2s ease-in-out;
-    cursor: pointer;
-
+  flex: 0 0 240px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border-radius: 16px;
+  border: 2px solid #5f9fff;
+  box-shadow:
+    0 0 3px #5f9fff,
+    0 0 6px #5f9fff;
+  padding: 12px;
+  height: auto;
+  min-width: 240px;
+  min-height: 320px;
+  max-height: 360px;
+  text-align: left;
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+  overflow: hidden;
 }
 
 .container-item:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   box-shadow:
-    0 0 6px #5f9fff,
-    0 0 12px #5f9fff;
+    0 0 5px #5f9fff,
+    0 0 10px #5f9fff;
 }
 
-
 .header-info {
-    font-size: 1.3rem;
+  font-size: 1.1rem;
+  line-height: 1.3;
 }
 
 .container-info {
-    color: aliceblue;
-    font-size: 18px;
+  color: aliceblue;
+  font-size: 16px;
+  line-height: 1.5;
+  overflow-wrap: break-word;
+  flex-grow: 1;
+  overflow: auto;
+}
+
+@media (max-width: 768px) {
+    .container-item {
+        overflow: visible;
+    }
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding-top: 1px;
+  }
+  
+  .container-item {
+    flex: none;
+    width: 100%;
+    max-width: 400px;
+    min-height: auto;
+    max-height: none;
+  }
+  
+  .header-info {
+    font-size: 1.3rem;
+  }
+  
+  .container-info {
+    font-size: 17px;
+  }
 }
