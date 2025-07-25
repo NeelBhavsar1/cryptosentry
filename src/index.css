@@ -9,10 +9,6 @@
 }
 
 body, html {
-  background: url(../src/assets/homegradient.png);
-  background-size: cover;
-  height: 100%;
-  margin: 0;
-  padding: 0;
+  background-color: rgba(1,7,33,255);
 }
 

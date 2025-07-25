@@ -1,81 +1,150 @@
+/* Reset some basics */
+
+
 .home-container {
+  margin: 10px;
+  margin-bottom: 10px;
   display: flex;
   flex-direction: row;
-  margin: 0px 30px;
-  height: 70vh;
+  justify-content: space-between;
+  padding: 40px 30px;
+  height: 72vh;
   border-radius: 20px;
   border: 2px solid #5f9fff;
   box-shadow:
-    0 0 4px #5f9fff,
-    0 0 8px #5f9fff;
-  z-index: 0;
+    0 0 8px #5f9fff66,
+    0 0 20px #5f9fff44;
+  color: aliceblue;
   overflow: hidden;
+  gap: 2rem;
 }
 
+/* Left side text container */
 .left-container {
-    margin: 60px; 
-    align-items: center;
-    justify-content: center;
-    height: 100%;
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 600px;
 }
 
+/* Title */
 .left-container h1 {
-    font-size: 5rem;
-    font-weight: 600;
-    margin-bottom: 20px;
-    color: aliceblue;
-    line-height: 1;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+  color: #a3c9ff;
 }
 
-.left-container p {
-    font-size: 20px;
-    color: aliceblue;
-    max-width: 800px;
-    line-height: 1.5;
-    margin-bottom: 50px;
-    text-align: left;
+/* Paragraph with typewriter effect */
+.typewriter {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  white-space: pre-wrap;
+  color: #cbd7ff;
+  user-select: text;
 }
 
+/* Buttons container */
 .buttons {
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
+/* Buttons styling */
 .buttons button {
-  font-size: 1.3rem;
-  font-weight: 500;
-  padding: 10px 25px;
-  border: 2px solid #5f9fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 12px 28px;
   border-radius: 12px;
-  background: #2b2b497f;
+  border: 2px solid #5f9fff;
+  background-color: transparent;
   color: #5f9fff;
   cursor: pointer;
   transition: all 0.3s ease;
-
+  min-width: 140px;
+  text-align: center;
+  user-select: none;
 }
 
-.buttons button:hover {
-  background: #5f9fff;
-  color: aliceblue;
-  border-color: #5f9fff;
+.buttons button:hover,
+.buttons button:focus {
+  background-color: #5f9fff;
+  color: #161a2e;
   box-shadow:
-    0 0 10px #5f9fff,
-    0 0 20px #5f9fff;
+    0 0 12px #5f9fff,
+    0 0 24px #5f9fff99;
+  outline: none;
 }
 
-
+/* Right side image container */
 .right-container {
-    display: flex;
-    margin-left: 100px;
+  flex: 1 1 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 500px;
 }
 
-.typewriter {
-  white-space: pre-wrap;
-  line-height: 1.6;
-  text-align: start;
+.right-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  user-select: none;
 }
 
+/* Responsive for tablets and smaller */
+@media (max-width: 900px) {
+  .home-container {
+    flex-direction: column;
+    height: auto;
+    padding: 30px 20px;
+  }
 
+  .left-container,
+  .right-container {
+    max-width: 100%;
+    margin: 0 auto;
+  }
 
+  .right-container {
+    margin-top: 30px;
+  }
 
+  .left-container h1 {
+    font-size: 2.5rem;
+  }
+
+  .buttons button {
+    min-width: 120px;
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
+
+/* Responsive for mobile */
+@media (max-width: 480px) {
+  .home-container {
+    padding: 20px 15px;
+  }
+
+  .left-container h1 {
+    font-size: 2rem;
+  }
+
+  .typewriter {
+    font-size: 0.95rem;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+
+  .buttons button {
+    min-width: 100%;
+    padding: 12px;
+  }
+}
